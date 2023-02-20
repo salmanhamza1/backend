@@ -3,11 +3,11 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const database = process.env.DB
+const connectionString = process.env.DATABASE_URL;
 
 const Connection = async () => {
   try {
-    mongoose.connect(database, {
+    mongoose.connect(connectionString, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
     });
